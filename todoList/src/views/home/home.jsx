@@ -2,38 +2,49 @@ import { useState } from 'react'
 import React from 'react'
 import './style.css'
 
-import {List} from '../../componentes/list/list';
+import Item from '../../class/item'
+import List from '../../componentes/list/list';
+import Form from '../../componentes/form/form';
 
 
 function App() {
   
-  const [text, setText] = useState("");
+  
   const [items, setItems] = useState([])
 
-  function handleChange(event){
-    let t = event.target.value;
-    setText(t)
+  function onAddItem(text) {
+
+    let item = new Item(text)
+    setItems([...items, item])
+
   }
 
-  function addItem(event){
-    //event.preventDefault();
-    if(text){
-      setItems([...items, text])
-      setText('');
-    }else{
-      alert("insira um elemento")
-    }
+  function onItemDeleted(item){
+    let filteredItems = items.filter(it =>it.id != item.id)
+
+    setItems(filteredItems);
+
+  }
+
+  function onDone(item){
+    let uptdatedItems = items.map(it =>{
+      if(it.id == item.id){
+        it.done = !it.done;
+      }
+
+      return it
+    })
+
+    setItems(uptdatedItems)
   }
 
   return (
     <div className='container'>
       <h1> TODO </h1>
-        <form>
-          <input onChange={handleChange}  type="text" value={text} />
-          <button type='button' onClick={addItem}>Add</button>
-        </form>
+        
+      <Form onAddItem={onAddItem}></Form>
 
-       <List> items={items} </List>
+       <List onDone={onDone} onItemDeleted={onItemDeleted} items={items}></List>
 
     </div>
   )

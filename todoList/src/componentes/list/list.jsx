@@ -1,17 +1,28 @@
 import React from "react";
+import './style.css' 
 
-
-
-export function List(props){
-
-    
-
-    console.log(props)
-    return(
-        <ul>
-            {props.items.maps(item => <li>{item}</li>)}
-        </ul>
-    )
+function DoneImg(props){
+    if(props.done){
+        return(<img alt="done" src="./assets/verifica.png"></img>)
+    }else{
+        return(<img alt="undone" src="./assets/fechar.png"></img>)
+    }
 }
 
+function List(props){
 
+  
+    return(
+    <ul >
+        {props.items.map(item => <li className={item.done? "done" : ""} key={item.id}> 
+            {item.text} 
+            <button onClick={() =>{props.onDone(item)}}><DoneImg done={item.done}> </DoneImg></button>
+            <button onClick={() =>{props.onItemDeleted(item)}}><img alt="delete" src="./assets/excluir.png"/></button> </li>)}
+    </ul>
+
+    )
+ 
+
+}
+
+export default List
