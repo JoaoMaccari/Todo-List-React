@@ -2,7 +2,7 @@ import { useState } from 'react'
 import React from 'react'
 import './style.css'
 
-
+import {List} from '../../componentes/list/list';
 
 
 function App() {
@@ -23,8 +23,6 @@ function App() {
     }else{
       alert("insira um elemento")
     }
-
-    
   }
 
   return (
@@ -35,12 +33,12 @@ function App() {
           <button type='button' onClick={addItem}>Add</button>
         </form>
 
-        <ul>
-          {items.map(item =><li>{item}</li>)}
-        </ul>
+       <List> items={items} </List>
 
     </div>
   )
+
+
 }
 
 export default App
