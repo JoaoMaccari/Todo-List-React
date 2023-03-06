@@ -1,5 +1,5 @@
 .container{
-
+    
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -47,7 +47,7 @@
     font-weight: 700;
     background: #ea4c89;
     color: #ffff;
-
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 
     margin: 12px 0 84px;
@@ -61,6 +61,11 @@
     filter: brightness(0.9);
 }
 
-.btn{
-    margin: 10px;
+.container li{
+    width: 100%;
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
+

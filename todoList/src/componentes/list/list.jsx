@@ -13,11 +13,16 @@ function List(props){
 
   
     return(
-    <ul >
-        {props.items.map(item => <li className={item.done? "done" : ""} key={item.id}> 
+    <ul className="lista" >
+        {props.items.map(item => <li className={item.done? "done item" : "item"} key={item.id}> 
             {item.text} 
-            <button className="btn" onClick={() =>{props.onDone(item)}}><DoneImg done={item.done}> </DoneImg></button>
-            <button className="btn" onClick={() =>{props.onItemDeleted(item)}}><img alt="delete" src="./assets/excluir.png"/></button> </li>)}
+
+            <div>
+                <button className="btn" onClick={() =>{props.onDone(item)}}><DoneImg done={item.done}> </DoneImg></button>
+                <button className="btn" onClick={() =>{props.onItemDeleted(item)}}><img alt="delete" src="./assets/excluir.png"/></button>
+            </div>
+            
+             </li>)}
     </ul>
 
     )
