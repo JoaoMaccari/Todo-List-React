@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import React from 'react'
 import './style.css'
 
@@ -6,11 +6,38 @@ import Item from '../../class/item'
 import List from '../../componentes/list/list';
 import Form from '../../componentes/form/form';
 
+const saved_items = 'savedItems'
 
 function App() {
+
+  useEffect(()=>{
+    
+    fetch('https://api.github.com/users/joaomaccari')
+    .then(response => response.json())
+    .then(data =>{
+      console.log(data)
+      setUser({
+        avatar: data.avatar_url,
+        name: data.name
+      })
+    })
+
+  }, []);
   
-  
+  const [user, setUser] = useState({name: '', avatar: ''})
   const [items, setItems] = useState([])
+
+  useEffect(() =>{
+    let savedItems = JSON.parse(localStorage.getItem(saved_items))
+    if(savedItems){
+      setItems(savedItems)
+    }
+
+  }, [])
+
+  useEffect(()=>{
+    localStorage.setItem(saved_items, JSON.stringify(items))
+  },[items])
 
   function onAddItem(text) {
 
@@ -40,13 +67,30 @@ function App() {
 
   return (
     <div className='container'>
-      <h1> TODO </h1>
+
+      <header>
+        <h1> Lista </h1>
+
+          <div>
+          <strong>{user.name}</strong>
+          <img src={user.avatar} alt="" />
+
+          </div>
+
+          
+
+      </header>
+      
         
       <Form onAddItem={onAddItem}></Form>
 
-       <List onDone={onDone} onItemDeleted={onItemDeleted} items={items}></List>
+      <List onDone={onDone} onItemDeleted={onItemDeleted} items={items}></List>
+
+
 
     </div>
+
+
   )
 
 

@@ -5,3 +5,13 @@ img{
 .done{
     text-decoration: line-through;
 }
+
+.container ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn{
+    margin: 10px;
+}

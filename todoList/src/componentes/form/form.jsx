@@ -1,6 +1,8 @@
 import React from "react"
 import { useState } from 'react'
 
+import './style.css'
+
 function Form(props){
 
     
@@ -25,7 +27,7 @@ function Form(props){
     return(
         <form>
           <input onChange={handleChange}  type="text" value={text} />
-          <button type='button' onClick={addItem}>Add</button>
+          <button className="botao" type='button' onClick={addItem}>Add</button>
         </form>
        
     )
