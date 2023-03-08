@@ -69,7 +69,9 @@ function App() {
     <div className='container'>
 
       <header>
-        <h1> Lista </h1>
+
+        
+        
 
           <div>
           <strong>{user.name}</strong>

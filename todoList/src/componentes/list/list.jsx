@@ -17,7 +17,7 @@ function List(props){
         {props.items.map(item => <li className={item.done? "done item" : "item"} key={item.id}> 
             {item.text} 
 
-            <div>
+            <div className="div-btn-lista">
                 <button className="btn" onClick={() =>{props.onDone(item)}}><DoneImg done={item.done}> </DoneImg></button>
                 <button className="btn" onClick={() =>{props.onItemDeleted(item)}}><img alt="delete" src="./assets/excluir.png"/></button>
             </div>

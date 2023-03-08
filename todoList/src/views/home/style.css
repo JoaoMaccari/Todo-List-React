@@ -1,8 +1,20 @@
+body{
+    height: 150vh;
+
+    background: linear-gradient(216deg, rgba(234,76,137,1) 5%, rgba(50,197,230,1) 42%, rgba(255,255,255,0.8519782913165266) 76%);
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    
+    
+}
 .container{
+
+    
     
     display: flex;
     align-items: center;
     flex-direction: column;
+   
 }
 
 
@@ -61,11 +73,23 @@
     filter: brightness(0.9);
 }
 
+.container ul{
+    max-width: 80%;
+    
+}
+
 .container li{
-    width: 100%;
+
     box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.2);
     padding: 5px;
     border-radius: 10px;
     margin-top: 15px;
+}
+
+.container li button{
+   
+    margin-bottom: 5px;
+    background: #ea4c89;
+    
 }
 
