@@ -1,11 +1,8 @@
 
 # Todo List React
 
-> Status: Terminado
- 
-<h1>Uma aplicação do tipo To do list feita em React.js.</h1>
 
-
+<h3>Uma aplicação do tipo To do list feita em <a href="https://reactjs.org/docs/getting-started.html">React.js.</a> </h3>
 
 
 <h2>Adicionando itens na lista.</h2>
