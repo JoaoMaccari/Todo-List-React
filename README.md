@@ -1,3 +1,41 @@
 
 # Todo List React
- Uma Todo List feita em React
+
+
+ 
+Uma aplicação do tipo To do list feita em React.js
+
+ <h4 align="center">
+    <img alt="readme"  title="readme" src="addLista.gif" >
+ </h4>
+ 
+
+  <h4 align="center">
+    <img alt="readme"  title="readme" src="addLista2.gif" >
+ </h4>
+
+ 
+> Status: Terminado
+
+
+##Tecnologias usadas:
+
+<table>
+ <tr>
+  <td>HTML</td>
+  <td>CSS</td>
+  <td>BOOTSTRAP</td>
+  <td>REACT</td>
+  
+ <tr>
+  
+ <tr>
+  <td>5.0</td>
+  <td>3.0</td>
+  <td>5.2</td>
+  <td>18.2.0</td>
+ <tr>
+ 
+ </table>
+ 
+ 
